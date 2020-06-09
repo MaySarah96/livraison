@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -26,11 +27,11 @@ public class SplashActivity extends AppCompatActivity {
                 try {
                     sleep(3000);
                     if (restorePrefData()) {
-                        Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent mainActivity = new Intent(getApplicationContext(),ChangeEtatActivity.class);
                         startActivity(mainActivity);
                         finish();
                     } else {
-                        Intent intent = new Intent(getApplicationContext(), ChangeEtatActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                         finish();
                     }

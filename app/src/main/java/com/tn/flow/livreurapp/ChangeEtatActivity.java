@@ -30,10 +30,10 @@ public class ChangeEtatActivity extends AppCompatActivity {
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("myPrefs",MODE_PRIVATE);
         String id = pref.getString("userId","1");
-        String nom = pref.getString("nom","1");
-        String prenom = pref.getString("prenom","1");
-        String cin = pref.getString("cin","1");
-        String telephone = pref.getString("telephone","1");
+        String nom = pref.getString("nom","");
+        String prenom = pref.getString("prenom","");
+        String cin = pref.getString("cin","");
+        String telephone = pref.getString("telephone","");
 
         setContentView(R.layout.activity_change_etat);
         Logout = findViewById(R.id.Logout);
@@ -42,8 +42,8 @@ public class ChangeEtatActivity extends AppCompatActivity {
         textView10 = findViewById(R.id.textView10);
         textView12 = findViewById(R.id.textView12);
         textView9.setText(String.format("%s %s", nom, prenom));
-        textView9.setText(cin);
-        textView9.setText(telephone);
+        textView10.setText(cin);
+        textView12.setText(telephone);
         ApiUtil.getServiceClass().getLivraison(id).enqueue(new Callback<List<Livraison>>() {
             @Override
             public void onResponse(Call<List<Livraison>> call, Response<List<Livraison>> response) {
@@ -63,7 +63,12 @@ public class ChangeEtatActivity extends AppCompatActivity {
         Logout.setOnClickListener(v -> {
             // Clear preferences
             SharedPreferences.Editor editor = pref.edit();
-            editor.remove("isIntroOpnend");
+            editor.putBoolean("isIntroOpnend",false);
+            editor.putString("userId","");
+            editor.putString("nom","");
+            editor.putString("prenom","");
+            editor.putString("cin","");
+            editor.putString("telephone","");
             editor.apply();
             startActivity(new Intent(ChangeEtatActivity.this,MainActivity.class));
 
