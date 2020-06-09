@@ -19,6 +19,9 @@ public interface RetrofitInterface {
      @POST("/afficherleslivraison/{userId}")
     public Call<List<Livraison>> getLivraison(@Path("userId") String userId);
 
+     @POST("/mettreAjourLivraison/{id}/{idL}/{newetat}")
+    public Override mettreajour(@Path("id") String id,@Path("idL") String idL,@Path("newetat") String newetat);
+
 
 
 

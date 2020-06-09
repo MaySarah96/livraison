@@ -21,8 +21,9 @@ import java.util.List;
 public class ChangeEtatActivity extends AppCompatActivity {
 
     String TAG = ChangeEtatActivity.class.getSimpleName();
-    Button Logout;
+    Button Logout,button2;
     TextView textView9,textView10,textView12,textView4,textView13,textView15;
+    String idL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,7 @@ public class ChangeEtatActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_change_etat);
         Logout = findViewById(R.id.Logout);
+        button2 = findViewById(R.id.button2);
         textView9 = findViewById(R.id.textView9);
         textView10 = findViewById(R.id.textView10);
         textView12 = findViewById(R.id.textView12);
@@ -49,6 +51,8 @@ public class ChangeEtatActivity extends AppCompatActivity {
                 textView4.setText(String.format("%sDnt", response.body().get(0).getFraisLivra().toString()));
                 textView13.setText(response.body().get(0).getDestLivra());
                 textView4.setText(response.body().get(0).getEtatLivra());
+                textView15.setText(response.body().get(0).getEtatLivra());
+                idL = response.body().get(0).getIdLivra().toString();
             }
 
             @Override
@@ -64,7 +68,9 @@ public class ChangeEtatActivity extends AppCompatActivity {
             startActivity(new Intent(ChangeEtatActivity.this,MainActivity.class));
 
         });
-
+        button2.setOnClickListener(v -> {
+            ApiUtil.getServiceClass().mettreajour(id,idL,"livrer");
+        });
     }
 
 
