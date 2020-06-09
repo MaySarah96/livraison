@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EA2138</color>
+    <color name="colorPrimaryDark">#EA2138</color>
+    <color name="colorAccent">#121128</color>
+    <color name="colorBlacktext">#3C3C3C</color>
+    <color name="black">#000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="CasMoyen">#FF8901</color>
+    <color name="CasStable">#11AC1B</color>
+    <color name="casnonrpondant">#707070</color>
+    <color name="CasMoyenopacite">#80FF8901</color>
+    <color name="CasStableopacite">#8011AC1B</color>
+    <color name="casnonrpondantopacite">#80707070</color>
+    <color name="tab_indicator_gray">#c0c0c0</color>
+</resources>

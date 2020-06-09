@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LivreurApp</string>
+    <string name="acceptez">En vous connectant, vous acceptez nos</string>
+    <string name="termes">termes et conditions</string>
+</resources>
