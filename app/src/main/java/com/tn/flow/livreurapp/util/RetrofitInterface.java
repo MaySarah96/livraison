@@ -20,7 +20,7 @@ public interface RetrofitInterface {
     public Call<List<Livraison>> getLivraison(@Path("userId") String userId);
 
      @POST("/mettreAjourLivraison/{id}/{idL}/{newetat}")
-    public Override mettreajour(@Path("id") String id,@Path("idL") String idL,@Path("newetat") String newetat);
+    public Call<Void> mettreajour(@Path("id") String id,@Path("idL") String idL,@Path("newetat") String newetat);
 
 
 
